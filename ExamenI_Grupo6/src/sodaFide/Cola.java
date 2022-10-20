@@ -11,7 +11,7 @@ package sodaFide;
  */
 public class Cola {
     private NodoCola frente;
-    private NodoCola finall;
+    private NodoCola ultimo;
     public int largo;
 
     public Cola(){}
