@@ -7,10 +7,10 @@ public class Orden {
     private String Combo;
     private  Persona personita;
 
-    public Orden(int precio, String Combo, Persona personita) {
+    public Orden(int precio, String Combo, String nombre, int cedula, boolean discapacidad) {
         this.precio = precio;
         this.Combo = Combo;
-        this.personita = personita;
+        this.personita = new Persona(nombre, cedula, discapacidad);// aca creamos a la persona que va a estar asociada a la orden
     }
 
     public int getPrecio() {

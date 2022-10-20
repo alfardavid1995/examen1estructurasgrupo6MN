@@ -38,10 +38,10 @@ public class SodaFide extends javax.swing.JFrame {
         jTextField_IngresaCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField_MontoTotal = new javax.swing.JTextField();
         jCheckBox_Discapacidad = new javax.swing.JCheckBox();
         jButton_AgregaPedido = new javax.swing.JButton();
         jComboBoxComboMenu = new javax.swing.JComboBox<>();
+        jLabelTotalMonto = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton_AtenderPedido = new javax.swing.JButton();
@@ -92,8 +92,6 @@ public class SodaFide extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Total:");
 
-        jTextField_MontoTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
         jCheckBox_Discapacidad.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jCheckBox_Discapacidad.setText("Discapacidad");
         jCheckBox_Discapacidad.addActionListener(new java.awt.event.ActionListener() {
@@ -126,8 +124,8 @@ public class SodaFide extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabelTotalMonto))
                     .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -147,7 +145,7 @@ public class SodaFide extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addComponent(jButton_AgregaPedido)
                         .addGap(30, 30, 30)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,8 +168,8 @@ public class SodaFide extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_AgregaPedido))
+                    .addComponent(jButton_AgregaPedido)
+                    .addComponent(jLabelTotalMonto))
                 .addGap(91, 91, 91))
         );
 
@@ -190,7 +188,7 @@ public class SodaFide extends javax.swing.JFrame {
                 .addComponent(jSeparator1)
                 .addGap(667, 667, 667))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(482, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton_AtenderPedido)
                 .addGap(85, 85, 85))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -223,7 +221,7 @@ public class SodaFide extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,11 +237,14 @@ public class SodaFide extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneLista)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPaneLista)
+                .addGap(257, 257, 257))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneLista)
+            .addComponent(jTabbedPaneLista, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -269,6 +270,34 @@ public class SodaFide extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IngresaNombreActionPerformed
 
     private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
+        int cedula=Integer.parseInt(jTextField_IngresaCedula.getText());
+        String nombre=jTextField_IngresaNombre.getText();
+        boolean discapacidad=jCheckBox_Discapacidad.isEnabled();
+        String comboEscogido = "";
+        int precioEscogido = 0;
+                
+        
+        switch(jComboBoxComboMenu.getSelectedIndex()){
+            case 0:
+                comboEscogido="Combo 1";
+                precioEscogido = 4000;
+                break;
+            case 1:
+                comboEscogido="Combo 2";
+                precioEscogido = 5000;
+                break;
+             case 2:
+                comboEscogido="Combo 3";
+                precioEscogido = 6000;
+                break;
+            case 3:
+                comboEscogido="Combo 4";
+                precioEscogido = 7000;
+                break;
+        }
+        Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
+        String precioEscogidotring = precioEscogido+ "";
+        jLabelTotalMonto.setText(precioEscogidotring);
         
     }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
 
@@ -321,6 +350,7 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelTotalMonto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -333,7 +363,6 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaPilaTrastes;
     private javax.swing.JTextField jTextField_IngresaCedula;
     private javax.swing.JTextField jTextField_IngresaNombre;
-    private javax.swing.JTextField jTextField_MontoTotal;
     private javax.swing.JTextPane jTextPaneListaPedidos;
     // End of variables declaration//GEN-END:variables
 }
