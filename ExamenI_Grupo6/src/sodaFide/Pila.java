@@ -12,11 +12,7 @@ public class Pila {
     public boolean Vacia(){ return cima == null;}
     
     public int tamanio(){ return this.largo;}
-    
-       
-    
-    
-    
+
     public void push(Traste trastecito){
         NodoPila newNode = new NodoPila();
         newNode.setTrasteNodo(trastecito);
@@ -55,8 +51,5 @@ public class Pila {
                 + stringConTodalaInfodelaPila+"<Final>"; 
         return stringConTodalaInfodelaPila;
     }
-    
-    
-     
-    
+
 }

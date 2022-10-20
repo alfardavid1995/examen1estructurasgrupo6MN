@@ -1,6 +1,4 @@
-
 package sodaFide;
-
 
 public class Orden {
     private int precio;
@@ -8,10 +6,12 @@ public class Orden {
     private  Persona personita;
     private  boolean tieneCubiertos;
     
-    public Orden(int precio, String Combo, String nombre, int cedula, boolean discapacidad, boolean tieneCubiertos ) {
+    public Orden(int precio, String Combo, String nombre, int cedula, 
+            boolean discapacidad, boolean tieneCubiertos ) {
         this.precio = precio;
         this.Combo = Combo;
-        this.personita = new Persona(nombre, cedula, discapacidad);// aca creamos a la persona que va a estar asociada a la orden
+        // aca creamos a la persona que va a estar asociada a la orden
+        this.personita = new Persona(nombre, cedula, discapacidad);
         this.tieneCubiertos=tieneCubiertos;
     }
 
@@ -52,7 +52,4 @@ public class Orden {
         return "Orden{" + "precio=" + precio + ", Combo=" + Combo + ", personita=" + personita + ", tieneCubiertos=" + tieneCubiertos + '}';
     }
 
-   
-    
-    
 }
