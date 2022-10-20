@@ -29,52 +29,62 @@ public class SodaFide extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField_IngresaNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField_IngresaCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton_Combo1 = new javax.swing.JRadioButton();
         jRadioButton_Combo2 = new javax.swing.JRadioButton();
+        jRadioButton_Combo1 = new javax.swing.JRadioButton();
         jRadioButton_Combo3 = new javax.swing.JRadioButton();
         jRadioButton_Combo4 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField_MontoTotal = new javax.swing.JTextField();
         jCheckBox_Discapacidad = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jInternalFrame1.setVisible(true);
 
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Nombre del Cliente:");
 
         jTextField_IngresaNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField_IngresaNombre.setText("jTextField1");
+        jTextField_IngresaNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IngresaNombreActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Cedula del Cliente:");
 
         jTextField_IngresaCedula.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField_IngresaCedula.setText("jTextField1");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Menu:");
 
-        jRadioButton_Combo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo1.setText("Combo 2");
-
         jRadioButton_Combo2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo2.setText("Combo 1");
-        jRadioButton_Combo2.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton_Combo2.setText("Combo 2 ₡5000");
+
+        jRadioButton_Combo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jRadioButton_Combo1.setText("Combo 1 ₡4000");
+        jRadioButton_Combo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_Combo2ActionPerformed(evt);
+                jRadioButton_Combo1ActionPerformed(evt);
             }
         });
 
         jRadioButton_Combo3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo3.setText("Combo 3");
+        jRadioButton_Combo3.setText("Combo 3 ₡6000");
         jRadioButton_Combo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton_Combo3ActionPerformed(evt);
@@ -82,7 +92,7 @@ public class SodaFide extends javax.swing.JFrame {
         });
 
         jRadioButton_Combo4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo4.setText("Combo 4");
+        jRadioButton_Combo4.setText("Combo 4 ₡7000");
         jRadioButton_Combo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton_Combo4ActionPerformed(evt);
@@ -93,7 +103,6 @@ public class SodaFide extends javax.swing.JFrame {
         jLabel4.setText("Total:");
 
         jTextField_MontoTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField_MontoTotal.setText("jTextField1");
 
         jCheckBox_Discapacidad.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jCheckBox_Discapacidad.setText("Discapacidad");
@@ -103,76 +112,106 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(21, 21, 21)
-                                .addComponent(jTextField_MontoTotal)))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton_Combo1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton_Combo2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCheckBox_Discapacidad))
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Agregar Pedido");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jCheckBox_Discapacidad)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRadioButton_Combo2)
                             .addComponent(jRadioButton_Combo3)
-                            .addComponent(jRadioButton_Combo4))))
-                .addContainerGap(84, Short.MAX_VALUE))
+                            .addComponent(jRadioButton_Combo4)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jRadioButton_Combo1))
+                                    .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton1)))))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton_Combo2)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton_Combo1)
                     .addComponent(jLabel3)
                     .addComponent(jCheckBox_Discapacidad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton_Combo1)
+                .addComponent(jRadioButton_Combo2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton_Combo3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton_Combo4)
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(131, Short.MAX_VALUE))
+                    .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(91, 91, 91))
         );
+
+        jTabbedPane1.addTab("Agregar Pedido", jPanel2);
+
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Pedido", "Nombre", "Cedula", "Monto"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTabbedPane2.addTab("Pedidos", jScrollPane1);
+
+        jTabbedPane1.addTab("Lista de Pedidos", jTabbedPane2);
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,12 +228,14 @@ public class SodaFide extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton_Combo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo2ActionPerformed
+    private void jRadioButton_Combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_Combo2ActionPerformed
+        
+    }//GEN-LAST:event_jRadioButton_Combo1ActionPerformed
 
     private void jCheckBox_DiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_DiscapacidadActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jCheckBox_DiscapacidadActionPerformed
 
     private void jRadioButton_Combo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo3ActionPerformed
@@ -204,6 +245,10 @@ public class SodaFide extends javax.swing.JFrame {
     private void jRadioButton_Combo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton_Combo4ActionPerformed
+
+    private void jTextField_IngresaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IngresaNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IngresaNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,17 +287,22 @@ public class SodaFide extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox_Discapacidad;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton_Combo1;
     private javax.swing.JRadioButton jRadioButton_Combo2;
     private javax.swing.JRadioButton jRadioButton_Combo3;
     private javax.swing.JRadioButton jRadioButton_Combo4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField_IngresaCedula;
     private javax.swing.JTextField jTextField_IngresaNombre;
     private javax.swing.JTextField jTextField_MontoTotal;

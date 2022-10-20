@@ -10,5 +10,39 @@ package sodaFide;
  * @author Wstov
  */
 public class Persona {
-    
+    private String nombre;
+    private int cedula;
+    private boolean discapacidad;
+    Ordenes orden;
+
+    public Persona(String nombre, int cedula, boolean discapacidad, Ordenes orden) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.discapacidad = discapacidad;
+        this.orden = orden;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public boolean isDiscapacidad() {
+        return discapacidad;
+    }
+
+    public void setDiscapacidad(boolean discapacidad) {
+        this.discapacidad = discapacidad;
+    }
 }
