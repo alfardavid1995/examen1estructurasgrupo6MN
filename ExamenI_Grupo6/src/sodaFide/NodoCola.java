@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sodaFide;
 
-/**
- *
- * @author Wstov
- */
 public class NodoCola {
     private NodoCola atras;
     private Orden orden;
@@ -36,10 +28,10 @@ public class NodoCola {
         this.orden = orden;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Nombre: "+orden.getNombre()+
-//                " Cedula: "+orden.getCedula();
-//    }
-//        
+    @Override
+    public String toString() {
+        return "NodoCola{" + "atras=" + atras + ", orden=" + orden + '}';
+    }
+
+  
 }

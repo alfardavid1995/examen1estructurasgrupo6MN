@@ -58,14 +58,17 @@ public class Cola {
         return aux;
     }
 
-    @Override
+  @Override
     public String toString(){
-        String s = "";
-        NodoCola aux = frente;
-        while(aux != null){
-            s += aux+"\n";
+        String stringConTodalaInfodelaCola="";
+        NodoCola aux=frente;
+        while(aux!=null){
+            stringConTodalaInfodelaCola=stringConTodalaInfodelaCola
+                    +aux.getOrden().toString()+"\n"; 
             aux=aux.getAtras();
         }
-        return s;
+        stringConTodalaInfodelaCola="<Frente>\n"
+                + stringConTodalaInfodelaCola+"<Final>"; 
+        return stringConTodalaInfodelaCola;
     }
 }

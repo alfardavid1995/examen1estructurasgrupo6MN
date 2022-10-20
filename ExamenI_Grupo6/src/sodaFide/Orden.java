@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sodaFide;
 
-/**
- *
- * @author Wstov
- */
+
 public class Orden {
     private int precio;
     private String Combo;
@@ -42,6 +35,11 @@ public class Orden {
 
     public void setPersonita(Persona personita) {
         this.personita = personita;
+    }
+
+    @Override
+    public String toString() {
+        return "Orden{" + "precio=" + precio + ", Combo=" + Combo + ", personita=" + personita + '}';
     }
     
     
