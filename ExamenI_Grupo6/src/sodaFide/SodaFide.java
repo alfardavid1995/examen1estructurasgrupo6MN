@@ -283,6 +283,7 @@ public class SodaFide extends javax.swing.JFrame {
         boolean discapacidad=jCheckBox_Discapacidad.isSelected();
         String comboEscogido = "";
         int precioEscogido = 0;
+        boolean tieneCubiertos= false;
         
         Traste traste = new Traste();
                 
@@ -295,6 +296,7 @@ public class SodaFide extends javax.swing.JFrame {
             case 1:
                 comboEscogido="Combo 2";
                 precioEscogido = 5000;
+                tieneCubiertos = true;
                 break;
              case 2:
                 comboEscogido="Combo 3";
@@ -304,13 +306,18 @@ public class SodaFide extends javax.swing.JFrame {
             case 3:
                 comboEscogido="Combo 4";
                 precioEscogido = 7000;
+                   tieneCubiertos = true;
                 break;
         }
-        Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
+        Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad,tieneCubiertos);
         String precioEscogidotring = precioEscogido+ "";
         jLabelTotalMonto.setText(precioEscogidotring);
         colita.encola(ordencita);
         jTextPaneListaPedidos.setText(colita.toString());
+      
+        contador += 1;
+        traste = new Traste(contador,ordencita.isTieneCubiertos());
+         miPila.push(traste);
     }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
 
     private void jComboBoxComboMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxComboMenuActionPerformed
@@ -319,28 +326,11 @@ public class SodaFide extends javax.swing.JFrame {
 
     private void jButton_AtenderPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AtenderPedidoActionPerformed
         // TODO add your handling code here:
+      
         colita.eliminaPrimero();
         jTextPaneListaPedidos.setText(colita.toString());
-        Traste traste = new Traste();
-        contador += 1;
-        
-        if (jComboBoxComboMenu.getSelectedIndex() == 0 ){
-            traste = new Traste(contador, false);
-            miPila.push(traste);
-            jTextAreaPilaTrastes.setText(miPila.toString());
-        }else if(jComboBoxComboMenu.getSelectedIndex() == 1){
-            traste = new Traste(contador, true);
-            miPila.push(traste);
-            jTextAreaPilaTrastes.setText(miPila.toString());
-        }else if(jComboBoxComboMenu.getSelectedIndex() == 2){
-            traste = new Traste(contador, false);
-            miPila.push(traste);
-            jTextAreaPilaTrastes.setText(miPila.toString());
-        }else if(jComboBoxComboMenu.getSelectedIndex() == 3){
-            traste = new Traste(contador, true);
-            miPila.push(traste);
-            jTextAreaPilaTrastes.setText(miPila.toString());
-        }
+        jTextAreaPilaTrastes.setText(miPila.toString());
+       
     }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
 
     /**

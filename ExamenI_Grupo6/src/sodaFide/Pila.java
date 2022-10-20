@@ -13,6 +13,10 @@ public class Pila {
     
     public int tamanio(){ return this.largo;}
     
+       
+    
+    
+    
     public void push(Traste trastecito){
         NodoPila newNode = new NodoPila();
         newNode.setTrasteNodo(trastecito);
