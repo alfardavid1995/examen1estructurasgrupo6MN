@@ -10,14 +10,16 @@ package sodaFide;
  * @author Wstov
  */
 public class SodaFide extends javax.swing.JFrame {
+    private int contador = 0;
 
     /**
      * Creates new form SodaFide
      */
     public SodaFide() {
         initComponents();
-        
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -281,28 +283,27 @@ public class SodaFide extends javax.swing.JFrame {
         boolean discapacidad=jCheckBox_Discapacidad.isSelected();
         String comboEscogido = "";
         int precioEscogido = 0;
+        
+        Traste traste = new Traste();
                 
         
         switch(jComboBoxComboMenu.getSelectedIndex()){
             case 0:
                 comboEscogido="Combo 1";
                 precioEscogido = 4000;
-                trastecito.setTieneCubiertos(false);
                 break;
             case 1:
                 comboEscogido="Combo 2";
                 precioEscogido = 5000;
-                trastecito.setTieneCubiertos(true);
                 break;
              case 2:
                 comboEscogido="Combo 3";
                 precioEscogido = 6000;
-                 trastecito.setTieneCubiertos(false);
+
                 break;
             case 3:
                 comboEscogido="Combo 4";
                 precioEscogido = 7000;
-                trastecito.setTieneCubiertos(true);
                 break;
         }
         Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
@@ -320,11 +321,26 @@ public class SodaFide extends javax.swing.JFrame {
         // TODO add your handling code here:
         colita.eliminaPrimero();
         jTextPaneListaPedidos.setText(colita.toString());
+        Traste traste = new Traste();
+        contador += 1;
         
-      
-        trastecito = new Traste(((int) Math.random()*10+1),trastecito.isTieneCubiertos());  
-        miPila.push(trastecito);
-        jTextAreaPilaTrastes.setText(miPila.toString());
+        if (jComboBoxComboMenu.getSelectedIndex() == 0 ){
+            traste = new Traste(contador, false);
+            miPila.push(traste);
+            jTextAreaPilaTrastes.setText(miPila.toString());
+        }else if(jComboBoxComboMenu.getSelectedIndex() == 1){
+            traste = new Traste(contador, true);
+            miPila.push(traste);
+            jTextAreaPilaTrastes.setText(miPila.toString());
+        }else if(jComboBoxComboMenu.getSelectedIndex() == 2){
+            traste = new Traste(contador, false);
+            miPila.push(traste);
+            jTextAreaPilaTrastes.setText(miPila.toString());
+        }else if(jComboBoxComboMenu.getSelectedIndex() == 3){
+            traste = new Traste(contador, true);
+            miPila.push(traste);
+            jTextAreaPilaTrastes.setText(miPila.toString());
+        }
     }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
 
     /**
@@ -362,7 +378,6 @@ public class SodaFide extends javax.swing.JFrame {
         });
     }
     Cola colita = new  Cola();
-    Traste trastecito = new Traste();
     Pila miPila = new Pila();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_AgregaPedido;
