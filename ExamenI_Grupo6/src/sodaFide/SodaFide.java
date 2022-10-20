@@ -30,27 +30,26 @@ public class SodaFide extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPaneLista = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField_IngresaNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField_IngresaCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton_Combo2 = new javax.swing.JRadioButton();
-        jRadioButton_Combo1 = new javax.swing.JRadioButton();
-        jRadioButton_Combo3 = new javax.swing.JRadioButton();
-        jRadioButton_Combo4 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField_MontoTotal = new javax.swing.JTextField();
         jCheckBox_Discapacidad = new javax.swing.JCheckBox();
-        jButton1_AgregaPedido = new javax.swing.JButton();
+        jButton_AgregaPedido = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton_Agregar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jButton_AtenderPedido = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPaneListaPedidos = new javax.swing.JTextPane();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaPilaTrastes = new javax.swing.JTextArea();
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -70,7 +69,7 @@ public class SodaFide extends javax.swing.JFrame {
 
         jInternalFrame1.setVisible(true);
 
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTabbedPaneLista.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Nombre del Cliente:");
@@ -90,33 +89,6 @@ public class SodaFide extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Menu:");
 
-        jRadioButton_Combo2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo2.setText("Combo 2 ₡5000");
-
-        jRadioButton_Combo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo1.setText("Combo 1 ₡4000");
-        jRadioButton_Combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_Combo1ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton_Combo3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo3.setText("Combo 3 ₡6000");
-        jRadioButton_Combo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_Combo3ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton_Combo4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton_Combo4.setText("Combo 4 ₡7000");
-        jRadioButton_Combo4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_Combo4ActionPerformed(evt);
-            }
-        });
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Total:");
 
@@ -130,11 +102,18 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
 
-        jButton1_AgregaPedido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1_AgregaPedido.setText("Agregar Pedido");
-        jButton1_AgregaPedido.addActionListener(new java.awt.event.ActionListener() {
+        jButton_AgregaPedido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton_AgregaPedido.setText("Agregar Pedido");
+        jButton_AgregaPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_AgregaPedidoActionPerformed(evt);
+                jButton_AgregaPedidoActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2", "Combo 3", "Combo 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -144,33 +123,30 @@ public class SodaFide extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton_Combo2)
-                    .addComponent(jRadioButton_Combo3)
-                    .addComponent(jRadioButton_Combo4)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton_Combo1))
-                            .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jCheckBox_Discapacidad)
                                 .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton1_AgregaPedido)))
+                        .addGap(74, 74, 74)
+                        .addComponent(jButton_AgregaPedido)
+                        .addGap(30, 30, 30)))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -188,88 +164,86 @@ public class SodaFide extends javax.swing.JFrame {
                         .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton_Combo1)
                     .addComponent(jLabel3)
-                    .addComponent(jCheckBox_Discapacidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton_Combo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton_Combo3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton_Combo4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                    .addComponent(jCheckBox_Discapacidad)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField_MontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1_AgregaPedido))
+                    .addComponent(jButton_AgregaPedido))
                 .addGap(91, 91, 91))
         );
 
-        jTabbedPane1.addTab("Agregar Pedido", jPanel2);
+        jTabbedPaneLista.addTab("Agregar Pedido", jPanel2);
 
-        jButton_Agregar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton_Agregar.setText("Atender Pedido");
+        jButton_AtenderPedido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton_AtenderPedido.setText("Atender Pedido");
 
-        jTable2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Pedido", "Nombre", "Cédula", "Monto"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane4.setViewportView(jTextPaneListaPedidos);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Agregar)
+                .addComponent(jSeparator1)
+                .addGap(667, 667, 667))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(482, Short.MAX_VALUE)
+                .addComponent(jButton_AtenderPedido)
                 .addGap(85, 85, 85))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButton_Agregar)
+                .addComponent(jButton_AtenderPedido)
                 .addGap(49, 49, 49))
         );
 
-        jTabbedPane1.addTab("Lista de Pedidos", jPanel1);
+        jTabbedPaneLista.addTab("Lista de Pedidos", jPanel1);
+
+        jTextAreaPilaTrastes.setColumns(20);
+        jTextAreaPilaTrastes.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaPilaTrastes);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 715, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jTabbedPaneLista.addTab("Pila Trastes", jPanel3);
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPaneLista)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPaneLista)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,25 +264,17 @@ public class SodaFide extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox_DiscapacidadActionPerformed
 
-    private void jRadioButton_Combo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_Combo4ActionPerformed
-
-    private void jRadioButton_Combo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_Combo3ActionPerformed
-
-    private void jRadioButton_Combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Combo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_Combo1ActionPerformed
-
     private void jTextField_IngresaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IngresaNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_IngresaNombreActionPerformed
 
-    private void jButton1_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_AgregaPedidoActionPerformed
+    private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1_AgregaPedidoActionPerformed
+    }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,9 +312,10 @@ public class SodaFide extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_AgregaPedido;
-    private javax.swing.JButton jButton_Agregar;
+    private javax.swing.JButton jButton_AgregaPedido;
+    private javax.swing.JButton jButton_AtenderPedido;
     private javax.swing.JCheckBox jCheckBox_Discapacidad;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -357,18 +324,16 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton_Combo1;
-    private javax.swing.JRadioButton jRadioButton_Combo2;
-    private javax.swing.JRadioButton jRadioButton_Combo3;
-    private javax.swing.JRadioButton jRadioButton_Combo4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPaneLista;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTextArea jTextAreaPilaTrastes;
     private javax.swing.JTextField jTextField_IngresaCedula;
     private javax.swing.JTextField jTextField_IngresaNombre;
     private javax.swing.JTextField jTextField_MontoTotal;
+    private javax.swing.JTextPane jTextPaneListaPedidos;
     // End of variables declaration//GEN-END:variables
 }
