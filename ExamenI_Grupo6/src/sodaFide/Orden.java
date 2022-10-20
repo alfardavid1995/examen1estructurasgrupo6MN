@@ -49,7 +49,9 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "precio=" + precio + ", Combo=" + Combo + ", personita=" + personita + ", tieneCubiertos=" + tieneCubiertos + '}';
+        return "Orden{" + "precio=" + precio + ", Combo=" + Combo 
+                + ", personita=" + personita + ", tieneCubiertos=" 
+                + tieneCubiertos + '}';
     }
 
 }
