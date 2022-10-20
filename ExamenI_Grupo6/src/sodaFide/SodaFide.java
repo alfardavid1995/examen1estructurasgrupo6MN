@@ -109,7 +109,7 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxComboMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2", "Combo 3", "Combo 4" }));
+        jComboBoxComboMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2 (Tiene cubiertos)", "Combo 3", "Combo 4 (Tiene cubiertos)" }));
         jComboBoxComboMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxComboMenuActionPerformed(evt);
@@ -291,6 +291,7 @@ public class SodaFide extends javax.swing.JFrame {
             case 1:
                 comboEscogido="Combo 2";
                 precioEscogido = 5000;
+                trastecito.isTieneCubiertos();
                 break;
              case 2:
                 comboEscogido="Combo 3";
@@ -299,6 +300,7 @@ public class SodaFide extends javax.swing.JFrame {
             case 3:
                 comboEscogido="Combo 4";
                 precioEscogido = 7000;
+                trastecito.isTieneCubiertos();
                 break;
         }
         Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
@@ -316,6 +318,12 @@ public class SodaFide extends javax.swing.JFrame {
         // TODO add your handling code here:
         colita.eliminaPrimero();
         jTextPaneListaPedidos.setText(colita.toString());
+        
+       
+        Traste trastecito = new Traste();
+        
+        trastecito = new Traste(trastecito.isTieneCubiertos());  
+        miPila.push(trastecito);
     }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
 
     /**
@@ -353,6 +361,8 @@ public class SodaFide extends javax.swing.JFrame {
         });
     }
     Cola colita = new  Cola();
+    Traste trastecito = new Traste();
+        Pila miPila = new Pila();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_AgregaPedido;
     private javax.swing.JButton jButton_AtenderPedido;
