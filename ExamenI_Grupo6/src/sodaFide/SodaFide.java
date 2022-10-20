@@ -16,6 +16,7 @@ public class SodaFide extends javax.swing.JFrame {
      */
     public SodaFide() {
         initComponents();
+        
     }
 
     /**
@@ -177,6 +178,11 @@ public class SodaFide extends javax.swing.JFrame {
 
         jButton_AtenderPedido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton_AtenderPedido.setText("Atender Pedido");
+        jButton_AtenderPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_AtenderPedidoActionPerformed(evt);
+            }
+        });
 
         jScrollPane4.setViewportView(jTextPaneListaPedidos);
 
@@ -272,7 +278,7 @@ public class SodaFide extends javax.swing.JFrame {
     private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
         int cedula=Integer.parseInt(jTextField_IngresaCedula.getText());
         String nombre=jTextField_IngresaNombre.getText();
-        boolean discapacidad=jCheckBox_Discapacidad.isEnabled();
+        boolean discapacidad=jCheckBox_Discapacidad.isSelected();
         String comboEscogido = "";
         int precioEscogido = 0;
                 
@@ -298,12 +304,19 @@ public class SodaFide extends javax.swing.JFrame {
         Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
         String precioEscogidotring = precioEscogido+ "";
         jLabelTotalMonto.setText(precioEscogidotring);
-        
+        colita.encola(ordencita);
+        jTextPaneListaPedidos.setText(colita.toString());
     }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
 
     private void jComboBoxComboMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxComboMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxComboMenuActionPerformed
+
+    private void jButton_AtenderPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AtenderPedidoActionPerformed
+        // TODO add your handling code here:
+        colita.eliminaPrimero();
+        jTextPaneListaPedidos.setText(colita.toString());
+    }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,7 +352,7 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
     }
-
+    Cola colita = new  Cola();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_AgregaPedido;
     private javax.swing.JButton jButton_AtenderPedido;

@@ -55,8 +55,9 @@ public class Cola {
         String stringConTodalaInfodelaCola="";
         NodoCola aux=frente;
         while(aux!=null){
+            
             stringConTodalaInfodelaCola=stringConTodalaInfodelaCola
-                    +aux.getOrden().toString()+"\n"; 
+                    +aux.getOrden().toString()+"\n";
             aux=aux.getAtras();
         }
         stringConTodalaInfodelaCola="<Frente>\n"
