@@ -21,26 +21,38 @@ public class Pila {
             this.cima = newNode;
         }
         else{  
-            if (cima.getTrasteNodo().isTieneCubiertos()){
-             cima.getSiguiente().getTrasteNodo().isTieneCubiertos()
-           }
+            //si la cima trae 
+//            if (cima.getTrasteNodo().isTieneCubiertos()){
+//             cima.getSiguiente().getTrasteNodo().setTieneCubiertos(false);
+//           }else{
+//                if(cima.getSiguiente().getTrasteNodo().isTieneCubiertos() != true){
+//                    cima.getTrasteNodo().setTieneCubiertos(false);
+//                }
+//              
+//            }
             newNode.setSiguiente(this.cima);
             this.cima = newNode;
           
         }
         this.largo++;
     }
-    
-    
-    
-        public void listar(){
-        // Crea una copia de la pila.
-        NodoPila aux = cima;
-        // Recorre la pila hasta el ultimo node.
-        while(aux != null){
-            System.out.println("|\t" + aux.getTrasteNodo().toString()+ "\t|");
-            System.out.println("-----------------");
-            aux = aux.getSiguiente();
+
+      @Override
+    public String toString(){
+        String stringConTodalaInfodelaPila="";
+        NodoPila aux=cima;
+        while(aux!=null){
+            
+            stringConTodalaInfodelaPila=stringConTodalaInfodelaPila
+                    +aux.getTrasteNodo().toString()+"\n";
+            aux=aux.getSiguiente();
         }
+        stringConTodalaInfodelaPila="<Cima>\n"
+                + stringConTodalaInfodelaPila+"<Final>"; 
+        return stringConTodalaInfodelaPila;
     }
+    
+    
+     
+    
 }

@@ -227,7 +227,7 @@ public class SodaFide extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,20 +287,22 @@ public class SodaFide extends javax.swing.JFrame {
             case 0:
                 comboEscogido="Combo 1";
                 precioEscogido = 4000;
+                trastecito.setTieneCubiertos(false);
                 break;
             case 1:
                 comboEscogido="Combo 2";
                 precioEscogido = 5000;
-                trastecito.isTieneCubiertos();
+                trastecito.setTieneCubiertos(true);
                 break;
              case 2:
                 comboEscogido="Combo 3";
                 precioEscogido = 6000;
+                 trastecito.setTieneCubiertos(false);
                 break;
             case 3:
                 comboEscogido="Combo 4";
                 precioEscogido = 7000;
-                trastecito.isTieneCubiertos();
+                trastecito.setTieneCubiertos(true);
                 break;
         }
         Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, cedula, discapacidad);
@@ -319,11 +321,10 @@ public class SodaFide extends javax.swing.JFrame {
         colita.eliminaPrimero();
         jTextPaneListaPedidos.setText(colita.toString());
         
-       
-        Traste trastecito = new Traste();
-        
-        trastecito = new Traste(trastecito.isTieneCubiertos());  
+      
+        trastecito = new Traste(((int) Math.random()*10+1),trastecito.isTieneCubiertos());  
         miPila.push(trastecito);
+        jTextAreaPilaTrastes.setText(miPila.toString());
     }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
 
     /**
@@ -362,7 +363,7 @@ public class SodaFide extends javax.swing.JFrame {
     }
     Cola colita = new  Cola();
     Traste trastecito = new Traste();
-        Pila miPila = new Pila();
+    Pila miPila = new Pila();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_AgregaPedido;
     private javax.swing.JButton jButton_AtenderPedido;

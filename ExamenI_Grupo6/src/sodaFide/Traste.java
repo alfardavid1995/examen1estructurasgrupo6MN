@@ -7,8 +7,8 @@ public class Traste {
     public Traste() {
     }
 
-    public Traste( boolean tieneCubiertos) {
-        this.id = (int)Math.random()*10;
+    public Traste(int id, boolean tieneCubiertos) {
+        this.id =id;
         this.tieneCubiertos = tieneCubiertos;
     }
 
