@@ -9,19 +9,19 @@ package sodaFide;
  *
  * @author Wstov
  */
-public class Nodo {
-    private Nodo atras;
+public class NodoCola {
+    private NodoCola atras;
     private Persona persona;
 
-    public Nodo(Persona persona) {
+    public NodoCola(Persona persona) {
         this.persona = persona;
     }
 
-    public Nodo getAtras() {
+    public NodoCola getAtras() {
         return atras;
     }
 
-    public void setAtras(Nodo atras) {
+    public void setAtras(NodoCola atras) {
         this.atras = atras;
         }
 

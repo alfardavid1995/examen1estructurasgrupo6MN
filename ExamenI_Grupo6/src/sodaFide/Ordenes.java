@@ -12,10 +12,12 @@ package sodaFide;
 public class Ordenes {
     private int precio;
     private String Combo;
+    private  Persona personita;
 
-    public Ordenes(int precio, String Combo) {
+    public Ordenes(int precio, String Combo, Persona personita) {
         this.precio = precio;
         this.Combo = Combo;
+        this.personita = personita;
     }
 
     public int getPrecio() {
@@ -33,6 +35,15 @@ public class Ordenes {
     public void setCombo(String Combo) {
         this.Combo = Combo;
     }
+
+    public Persona getPersonita() {
+        return personita;
+    }
+
+    public void setPersonita(Persona personita) {
+        this.personita = personita;
+    }
+    
     
     
 }

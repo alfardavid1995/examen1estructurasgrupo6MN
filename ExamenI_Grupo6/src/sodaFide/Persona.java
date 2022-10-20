@@ -13,13 +13,12 @@ public class Persona {
     private String nombre;
     private int cedula;
     private boolean discapacidad;
-    Ordenes orden;
 
-    public Persona(String nombre, int cedula, boolean discapacidad, Ordenes orden) {
+    public Persona(String nombre, int cedula, boolean discapacidad) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.discapacidad = discapacidad;
-        this.orden = orden;
+
     }
 
     public String getNombre() {
