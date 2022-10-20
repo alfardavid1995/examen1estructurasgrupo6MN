@@ -1,11 +1,25 @@
 package sodaFide;
 
+import java.util.Random;
+
 public class SodaFide extends javax.swing.JFrame {
+
     private int contador = 0;
 
     public SodaFide() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
+
+    public void limpiarConsola() {
+        jTextField_IngresaNombre.setText("");
+        jTextField_IngresaCedula.setText("");
+        jCheckBox_Discapacidad.setSelected(false);
+        jComboBoxComboMenu.setSelectedIndex(0);
+        jLabelTotalMonto.setText("");
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,11 +44,14 @@ public class SodaFide extends javax.swing.JFrame {
         jButton_AgregaPedido = new javax.swing.JButton();
         jComboBoxComboMenu = new javax.swing.JComboBox<>();
         jLabelTotalMonto = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton_AtenderPedido = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextPaneListaPedidos = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        text_Pila = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextAreaPilaTrastes = new javax.swing.JTextArea();
@@ -96,10 +113,24 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxComboMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2 (Tiene cubiertos)", "Combo 3", "Combo 4 (Tiene cubiertos)" }));
+        jComboBoxComboMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2 ", "Combo 3", "Combo 4 " }));
+        jComboBoxComboMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBoxComboMenuMouseClicked(evt);
+            }
+        });
         jComboBoxComboMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxComboMenuActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setText("Salir");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -120,40 +151,46 @@ public class SodaFide extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(jComboBoxComboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jCheckBox_Discapacidad)
-                                .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
+                        .addGap(93, 93, 93)
                         .addComponent(jButton_AgregaPedido)
-                        .addGap(30, 30, 30)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(58, 58, 58))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(16, 16, 16)))
                         .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jCheckBox_Discapacidad)
                     .addComponent(jComboBoxComboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jButton_AgregaPedido)
@@ -173,12 +210,16 @@ public class SodaFide extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(jTextPaneListaPedidos);
 
+        text_Pila.setColumns(20);
+        text_Pila.setRows(5);
+        jScrollPane2.setViewportView(text_Pila);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jSeparator1)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
                 .addGap(667, 667, 667))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -186,15 +227,19 @@ public class SodaFide extends javax.swing.JFrame {
                 .addGap(85, 85, 85))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jButton_AtenderPedido)
@@ -263,61 +308,110 @@ public class SodaFide extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IngresaNombreActionPerformed
 
     private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
-        int cedula=Integer.parseInt(jTextField_IngresaCedula.getText());
-        String nombre=jTextField_IngresaNombre.getText();
-        boolean discapacidad=jCheckBox_Discapacidad.isSelected();
+        int cedula = Integer.parseInt(jTextField_IngresaCedula.getText());
+        String nombre = jTextField_IngresaNombre.getText();
+        boolean discapacidad = jCheckBox_Discapacidad.isSelected();
         String comboEscogido = "";
         int precioEscogido = 0;
-        boolean tieneCubiertos= false;
-        
-        Traste traste = new Traste();
-                
-        
-        switch(jComboBoxComboMenu.getSelectedIndex()){
+
+        switch (jComboBoxComboMenu.getSelectedIndex()) {
             case 0:
-                comboEscogido="Combo 1";
+                comboEscogido = "Combo 1";
                 precioEscogido = 4000;
+
                 break;
             case 1:
-                comboEscogido="Combo 2";
+                comboEscogido = "Combo 2";
                 precioEscogido = 5000;
-                tieneCubiertos = true;
+
                 break;
-             case 2:
-                comboEscogido="Combo 3";
+            case 2:
+                comboEscogido = "Combo 3";
                 precioEscogido = 6000;
 
                 break;
             case 3:
-                comboEscogido="Combo 4";
+                comboEscogido = "Combo 4";
                 precioEscogido = 7000;
-                   tieneCubiertos = true;
+
                 break;
         }
-        Orden ordencita = new Orden( precioEscogido,comboEscogido, nombre, 
-                cedula, discapacidad,tieneCubiertos);
-        String precioEscogidotring = precioEscogido+ "";
-        jLabelTotalMonto.setText(precioEscogidotring);
+        Orden ordencita = new Orden(precioEscogido, comboEscogido, nombre,
+                cedula, discapacidad);
+
         colita.encola(ordencita);
         jTextPaneListaPedidos.setText(colita.toString());
-      
-        contador += 1;
-        traste = new Traste(contador,ordencita.isTieneCubiertos());
-        miPila.push(traste);
+        limpiarConsola();
+
     }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
 
     private void jComboBoxComboMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxComboMenuActionPerformed
-        // TODO add your handling code here:
+
+        String comboEscogido = "";
+        int precioEscogido = 0;
+
+        String precioEscogidotring = precioEscogido + "";
+        jLabelTotalMonto.setText(precioEscogidotring);
+
+        switch (jComboBoxComboMenu.getSelectedIndex()) {
+            case 0:
+                comboEscogido = "Combo 1";
+                precioEscogido = 4000;
+                precioEscogidotring = precioEscogido + "";
+                jLabelTotalMonto.setText(precioEscogidotring);
+                break;
+            case 1:
+                comboEscogido = "Combo 2";
+                precioEscogido = 5000;
+                precioEscogidotring = precioEscogido + "";
+                jLabelTotalMonto.setText(precioEscogidotring);
+
+                break;
+            case 2:
+                comboEscogido = "Combo 3";
+                precioEscogido = 6000;
+                precioEscogidotring = precioEscogido + "";
+                jLabelTotalMonto.setText(precioEscogidotring);
+                break;
+            case 3:
+                comboEscogido = "Combo 4";
+                precioEscogido = 7000;
+                precioEscogidotring = precioEscogido + "";
+                jLabelTotalMonto.setText(precioEscogidotring);
+
+                break;
+        }
     }//GEN-LAST:event_jComboBoxComboMenuActionPerformed
 
     private void jButton_AtenderPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AtenderPedidoActionPerformed
         // TODO add your handling code here:
-      
+        if(colita.ColaVacia()){
+             jTextPaneListaPedidos.setText("No hay pedidos en la cola");
+              text_Pila.setText("No hay traste que agregar");
+        }else{
         colita.eliminaPrimero();
         jTextPaneListaPedidos.setText(colita.toString());
+
+        //Genera un nuevo traste
+        Traste traste = new Traste();
+        contador += 1;
+        boolean tieneCubiertos = random.nextBoolean();
+        traste = new Traste(contador, tieneCubiertos);
+        text_Pila.setText(traste.toString());
+        miPila.push(traste);
         jTextAreaPilaTrastes.setText(miPila.toString());
+
+        }
        
     }//GEN-LAST:event_jButton_AtenderPedidoActionPerformed
+
+    private void jComboBoxComboMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxComboMenuMouseClicked
+
+    }//GEN-LAST:event_jComboBoxComboMenuMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -326,8 +420,8 @@ public class SodaFide extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : 
-                    javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info
+                    : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -355,9 +449,11 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
     }
-    Cola colita = new  Cola();
+    Cola colita = new Cola();
     Pila miPila = new Pila();
+    Random random = new Random();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_AgregaPedido;
     private javax.swing.JButton jButton_AtenderPedido;
     private javax.swing.JCheckBox jCheckBox_Discapacidad;
@@ -372,6 +468,7 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
@@ -381,5 +478,6 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_IngresaCedula;
     private javax.swing.JTextField jTextField_IngresaNombre;
     private javax.swing.JTextPane jTextPaneListaPedidos;
+    private javax.swing.JTextArea text_Pila;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,18 +21,14 @@ public class Pila {
             this.cima = newNode;
         }
         else{  
-            //si la cima trae 
-//            if (cima.getTrasteNodo().isTieneCubiertos()){
-//             cima.getSiguiente().getTrasteNodo().setTieneCubiertos(false);
-//           }else{
-//                if(cima.getSiguiente().getTrasteNodo().isTieneCubiertos() != true){
-//                    cima.getTrasteNodo().setTieneCubiertos(false);
-//                }
-//              
-//            }
+           
             newNode.setSiguiente(this.cima);
             this.cima = newNode;
-          
+            
+          if(cima.getSiguiente().getTrasteNodo().isTieneCubiertos()){
+              cima.getSiguiente().getTrasteNodo().setTieneCubiertos(false);
+              cima.getTrasteNodo().setTieneCubiertos(true);
+          }
         }
         this.largo++;
     }
