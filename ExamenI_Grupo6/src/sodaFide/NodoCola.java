@@ -13,6 +13,9 @@ public class NodoCola {
     private NodoCola atras;
     private Orden orden;
 
+    public NodoCola() {
+    }
+
     public NodoCola(Orden orden) {
         this.orden = orden;
     }

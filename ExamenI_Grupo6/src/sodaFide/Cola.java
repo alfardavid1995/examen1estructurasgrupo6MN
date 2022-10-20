@@ -16,30 +16,38 @@ public class Cola {
 
     public Cola(){}
 
-//    public void encola(NodoCola valor){
-//        if(valor.getOrden().isDiscapacidad()){
-//            if (frente == null){
-//                frente = valor;
-//                finall = valor;
-//            }else {//Trabajar logicamente este elmento
-//                NodoCola aux;
-//                aux = frente;
-//                frente = valor;
-//                finall.setAtras(aux);
-//            }
-//        }else {
-//            if (frente == null){
-//                frente = valor;
-//                finall = valor;
-//
-//            }else {
-//                finall.setAtras(valor);
-//                finall = valor;
-//            }
-//        }
-//        largo++;
-//    }
+    public void encola(Orden orden){
+        
+        NodoCola nodito=new NodoCola();
+        nodito.setOrden(orden);
+        nodito.setAtras(null);
+        
+        if (ColaVacia()){
+            //si está vacía el primer nodo lo define como primero y último
+            frente = nodito;
+            ultimo = nodito;
+        }else if(orden.getPersonita().isDiscapacidad()){
+            //si la persona es discapacitada, la pondrá de primera
+            nodito.setAtras(frente);
+            frente  = nodito;
+        }
+        else{
+            //si no está vacía el nuevo nodo lo manda de último
+            ultimo.setAtras(nodito);
+            ultimo = nodito;
+        }
+        largo++;
+    }
 
+    public boolean ColaVacia(){
+        //para determinar si la cola está vacía
+        if (frente==null){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    
     public NodoCola eliminaPrimero() {
         NodoCola aux = frente;
         if (frente != null) {
