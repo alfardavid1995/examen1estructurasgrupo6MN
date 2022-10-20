@@ -9,12 +9,12 @@ package sodaFide;
  *
  * @author Wstov
  */
-public class Ordenes {
+public class Orden {
     private int precio;
     private String Combo;
     private  Persona personita;
 
-    public Ordenes(int precio, String Combo, Persona personita) {
+    public Orden(int precio, String Combo, Persona personita) {
         this.precio = precio;
         this.Combo = Combo;
         this.personita = personita;

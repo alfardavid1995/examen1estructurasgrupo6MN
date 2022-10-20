@@ -11,10 +11,10 @@ package sodaFide;
  */
 public class NodoCola {
     private NodoCola atras;
-    private Persona persona;
+    private Orden orden;
 
-    public NodoCola(Persona persona) {
-        this.persona = persona;
+    public NodoCola(Orden orden) {
+        this.orden = orden;
     }
 
     public NodoCola getAtras() {
@@ -25,18 +25,18 @@ public class NodoCola {
         this.atras = atras;
         }
 
-    public Persona getPersona() {
-        return persona;
+    public Orden getOrden() {
+        return orden;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
+    public void setOrden(Orden orden) {
+        this.orden = orden;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: "+persona.getNombre()+
-                " Cedula: "+persona.getCedula();
-    }
-        
+//    @Override
+//    public String toString() {
+//        return "Nombre: "+orden.getNombre()+
+//                " Cedula: "+orden.getCedula();
+//    }
+//        
 }

@@ -16,29 +16,29 @@ public class Cola {
 
     public Cola(){}
 
-    public void encola(NodoCola valor){
-        if(valor.getPersona().isDiscapacidad()){
-            if (frente == null){
-                frente = valor;
-                finall = valor;
-            }else {//Trabajar logicamente este elmento
-                NodoCola aux;
-                aux = frente;
-                frente = valor;
-                finall.setAtras(aux);
-            }
-        }else {
-            if (frente == null){
-                frente = valor;
-                finall = valor;
-
-            }else {
-                finall.setAtras(valor);
-                finall = valor;
-            }
-        }
-        largo++;
-    }
+//    public void encola(NodoCola valor){
+//        if(valor.getOrden().isDiscapacidad()){
+//            if (frente == null){
+//                frente = valor;
+//                finall = valor;
+//            }else {//Trabajar logicamente este elmento
+//                NodoCola aux;
+//                aux = frente;
+//                frente = valor;
+//                finall.setAtras(aux);
+//            }
+//        }else {
+//            if (frente == null){
+//                frente = valor;
+//                finall = valor;
+//
+//            }else {
+//                finall.setAtras(valor);
+//                finall = valor;
+//            }
+//        }
+//        largo++;
+//    }
 
     public NodoCola eliminaPrimero() {
         NodoCola aux = frente;
