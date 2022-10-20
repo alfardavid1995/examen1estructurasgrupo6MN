@@ -41,7 +41,7 @@ public class SodaFide extends javax.swing.JFrame {
         jTextField_MontoTotal = new javax.swing.JTextField();
         jCheckBox_Discapacidad = new javax.swing.JCheckBox();
         jButton_AgregaPedido = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxComboMenu = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton_AtenderPedido = new javax.swing.JButton();
@@ -110,10 +110,10 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2", "Combo 3", "Combo 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxComboMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo 1", "Combo 2", "Combo 3", "Combo 4" }));
+        jComboBoxComboMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxComboMenuActionPerformed(evt);
             }
         });
 
@@ -133,7 +133,7 @@ public class SodaFide extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBoxComboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -166,7 +166,7 @@ public class SodaFide extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jCheckBox_Discapacidad)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxComboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -269,12 +269,12 @@ public class SodaFide extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IngresaNombreActionPerformed
 
     private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton_AgregaPedidoActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxComboMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxComboMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxComboMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,7 +315,7 @@ public class SodaFide extends javax.swing.JFrame {
     private javax.swing.JButton jButton_AgregaPedido;
     private javax.swing.JButton jButton_AtenderPedido;
     private javax.swing.JCheckBox jCheckBox_Discapacidad;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBoxComboMenu;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
