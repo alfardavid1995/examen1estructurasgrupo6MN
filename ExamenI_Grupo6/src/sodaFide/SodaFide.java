@@ -392,16 +392,22 @@ public class SodaFide extends javax.swing.JFrame {
 
             //Genera un nuevo traste
             Traste traste = new Traste();
+            
             //creamos un id random
             contador = (int) (Math.random() * 10 + 1);
+            
             //creamos un boolean random
             boolean tieneCubiertos = random.nextBoolean();
+            
             //se crea un nuevo traste con atributos id,tieneCubiertos
             traste = new Traste(contador, tieneCubiertos);
+            
             //se muestra el traste nuevo
             text_Pila.setText(traste.toString());
+            
             //se envia el nuevo traste a la pila
             miPila.push(traste);
+            
             //se muestra la pila actualizada
             jTextAreaPilaTrastes.setText(miPila.toString());
 
