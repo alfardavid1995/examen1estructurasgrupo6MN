@@ -1,11 +1,11 @@
 package sodaFide;
 
 public class NodoPila {
+
     private Traste trasteNodo;
     private NodoPila siguiente;
-    
-    //constructor para inicializar
 
+    //constructor para inicializar
     public NodoPila() {
         this.trasteNodo = null;
         this.siguiente = null;

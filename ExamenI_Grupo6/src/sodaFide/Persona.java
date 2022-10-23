@@ -1,11 +1,12 @@
-
 package sodaFide;
 
 public class Persona {
+
     private String nombre;
     private int cedula;
     private boolean discapacidad;
 
+//constructor para inicializar
     public Persona(String nombre, int cedula, boolean discapacidad) {
         this.nombre = nombre;
         this.cedula = cedula;
@@ -39,8 +40,8 @@ public class Persona {
 
     @Override
     public String toString() {
-        return " " + nombre + ", cedula: " + cedula 
+        return " " + nombre + ", cedula: " + cedula
                 + ", discapacidad: " + discapacidad + '}';
     }
-    
+
 }

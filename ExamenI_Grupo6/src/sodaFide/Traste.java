@@ -1,14 +1,16 @@
 package sodaFide;
 
 public class Traste {
-    private int id ;
+
+    private int id;
     private boolean tieneCubiertos;
-    
+
     public Traste() {
     }
 
+    //constructor para inicializar
     public Traste(int id, boolean tieneCubiertos) {
-        this.id =id;
+        this.id = id;
         this.tieneCubiertos = tieneCubiertos;
     }
 
@@ -30,9 +32,8 @@ public class Traste {
 
     @Override
     public String toString() {
-        return "Se creo un nuevo traste id: " + id + ", tieneCubiertos: " 
-                + tieneCubiertos ;
+        return "Se creo un nuevo traste id: " + id + ", tieneCubiertos: "
+                + tieneCubiertos;
     }
-        
-        
+
 }

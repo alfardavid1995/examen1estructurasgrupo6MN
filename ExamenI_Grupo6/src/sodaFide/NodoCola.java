@@ -1,13 +1,14 @@
-
 package sodaFide;
 
 public class NodoCola {
+
     private NodoCola atras;
     private Orden orden;
 
     public NodoCola() {
     }
 
+    //constructor para inicializar
     public NodoCola(Orden orden) {
         this.orden = orden;
     }
@@ -18,7 +19,7 @@ public class NodoCola {
 
     public void setAtras(NodoCola atras) {
         this.atras = atras;
-        }
+    }
 
     public Orden getOrden() {
         return orden;
@@ -33,5 +34,4 @@ public class NodoCola {
         return "NodoCola{" + "atras=" + atras + ", orden=" + orden + '}';
     }
 
-  
 }
