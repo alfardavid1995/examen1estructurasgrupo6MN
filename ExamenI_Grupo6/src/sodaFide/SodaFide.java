@@ -464,13 +464,10 @@ public class SodaFide extends javax.swing.JFrame {
     //con todos los IDs existentes registrados para que no haya repeticiones
     //en caso de haber una repeticion sale un true 
     private boolean buscarSiIDEstaRepetido(int idUnico){
-        System.out.println("idUnico: "+ idUnico);
         boolean IDEstaRepetido = false;
         for (int i=0; i<idTrasteArraylist.size(); i++){
-            System.out.println("entra al arraylist");
             if (idUnico==idTrasteArraylist.get(i)){
                 IDEstaRepetido = true;
-                System.out.println("indice repetido: "+ idUnico);
             }
         }
  
