@@ -1,10 +1,9 @@
 package sodaFide;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class SodaFide extends javax.swing.JFrame {
-
-    private int contador = 0;
 
     public SodaFide() {
         initComponents();
@@ -157,9 +156,9 @@ public class SodaFide extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField_IngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField_IngresaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -374,7 +373,7 @@ public class SodaFide extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxComboMenuActionPerformed
 
     private void jButton_AtenderPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AtenderPedidoActionPerformed
-
+        boolean idUnicoTraste = false;
         //al precionar este boton si la cola esta vacia muestra una alerta
         if (colita.ColaVacia()) {
             jTextPaneListaPedidos.setText("No hay pedidos en la cola");
@@ -388,14 +387,24 @@ public class SodaFide extends javax.swing.JFrame {
             //Genera un nuevo traste
             Traste traste = new Traste();
             
-            //creamos un id random
-            contador = (int) (Math.random() * 10 + 1);
+            int idTraste;
+            boolean idTrasteYaEstapresente = false;
+            do{
+                //creamos un id random para el traste
+                 idTraste = (int) (Math.random() * 10000 + 1);
+                //el ID es unico asi que solo se va a asignar si no esta 
+                //presente en el arraylist registrado
+                idTrasteYaEstapresente=buscarSiIDEstaRepetido(idTraste);
+            }while(idTrasteYaEstapresente);
+            
+            //agregarID a laLista
+            idTrasteArraylist.add(idTraste);
             
             //creamos un boolean random
             boolean tieneCubiertos = random.nextBoolean();
             
             //se crea un nuevo traste con atributos id,tieneCubiertos
-            traste = new Traste(contador, tieneCubiertos);
+            traste = new Traste(idTraste, tieneCubiertos);
             
             //se muestra el traste nuevo
             text_Pila.setText(traste.toString());
@@ -450,6 +459,24 @@ public class SodaFide extends javax.swing.JFrame {
             }
         });
     }
+    
+    //en esta rutina se envia un id generado de forma aleatoria y se compara
+    //con todos los IDs existentes registrados para que no haya repeticiones
+    //en caso de haber una repeticion sale un true 
+    private boolean buscarSiIDEstaRepetido(int idUnico){
+        System.out.println("idUnico: "+ idUnico);
+        boolean IDEstaRepetido = false;
+        for (int i=0; i<idTrasteArraylist.size(); i++){
+            System.out.println("entra al arraylist");
+            if (idUnico==idTrasteArraylist.get(i)){
+                IDEstaRepetido = true;
+                System.out.println("indice repetido: "+ idUnico);
+            }
+        }
+ 
+        return IDEstaRepetido;
+    }
+    ArrayList<Integer> idTrasteArraylist = new ArrayList<Integer>();
     Cola colita = new Cola();
     Pila miPila = new Pila();
     Random random = new Random();
