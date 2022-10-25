@@ -390,11 +390,14 @@ public class SodaFide extends javax.swing.JFrame {
             int idTraste;
             boolean idTrasteYaEstapresente = false;
             do{
-                //creamos un id random para el traste
+                //creamos un id random para el traste entre 1 y 10000
                  idTraste = (int) (Math.random() * 10000 + 1);
                 //el ID es unico asi que solo se va a asignar si no esta 
                 //presente en el arraylist registrado
                 idTrasteYaEstapresente=buscarSiIDEstaRepetido(idTraste);
+                //si el ID ya esta presente va seguir generando valores random
+                //hasta que genere un valor que no haya sido  
+                //almacena en el array list
             }while(idTrasteYaEstapresente);
             
             //agregarID a laLista
