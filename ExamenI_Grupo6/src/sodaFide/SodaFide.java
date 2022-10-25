@@ -287,7 +287,7 @@ public class SodaFide extends javax.swing.JFrame {
 
     private void jButton_AgregaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AgregaPedidoActionPerformed
 
-    //al precionar este boton se guardan todos los datos ingresados de la orden
+    //al presionar este boton se guardan todos los datos ingresados de la orden
         int cedula = Integer.parseInt(jTextField_IngresaCedula.getText());
         String nombre = jTextField_IngresaNombre.getText();
         boolean discapacidad = jCheckBox_Discapacidad.isSelected();
